@@ -1,13 +1,8 @@
 services:
-  zookeeper:
-    image: zookeeper
-    hostname: zookeeper
-    restart: always
-    ports:
-      - 2181:2181
-    environment:
-      ZOO_MY_ID: 1
-      ZOO_SERVERS: server.1=zookeeper:2888:3888;2181
+  kafka:
+    image: apache/kafka
+    hostname: kafka 
+    ports: 
+      - 9092:9092 
     volumes:
-      - ./data/zookeper/data:/data 
-      - ./data/zookeper/datalog:/datalog
+      - ./data/kafka/data:/var/lib/kafka/data 
