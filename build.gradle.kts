@@ -25,6 +25,10 @@ dependencies {
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
+tasks.named<JavaExec>("bootRun") {
+    standardInput = System.`in`
+}
+
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
